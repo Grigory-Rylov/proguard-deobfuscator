@@ -130,7 +130,8 @@ public class DeObfuscator
      * Finds the original method name(s) and return as String.
      */
     public String originalMethodName(String className,
-                                     String obfuscatedMethodName) {
+                                     String obfuscatedMethodName,
+                                     String type) {
         int extraIndent = -1;
         StringBuffer outLine = new StringBuffer();
 
@@ -144,7 +145,7 @@ public class DeObfuscator
                 Iterator methodInfoIterator = methodSet.iterator();
                 while (methodInfoIterator.hasNext()) {
                     MethodInfo methodInfo = (MethodInfo) methodInfoIterator.next();
-                    if (methodInfo.matches(0, null, null)) {
+                    if (methodInfo.matches(0, type, null)) {
                         // Is this the first matching method?
                         if (extraIndent < 0) {
                             extraIndent = outLine.length();
