@@ -6,8 +6,10 @@ DeObfuscator deObfuscator = new DeObfuscator(mappingFile);
 String originalClassName = deObfuscator.originalClassName(obfuscatedClassName);
 
 // 2) get original method name
-String originalMethodName = deObfuscator.originalMethodName(originalClassName, obfuscatedMethodName, type)
+String originalMethodName = deObfuscator.originalMethodName(originalClassName, obfuscatedMethodName, type, argumetns)
 ```
+where `type` and `arguments` can be null, but the result may be inaccurate
+
 
 ## Dependency
 1. Add it in your root build.gradle at the end of repositories:

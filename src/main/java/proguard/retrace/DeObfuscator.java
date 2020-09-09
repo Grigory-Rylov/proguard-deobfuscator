@@ -131,7 +131,8 @@ public class DeObfuscator
      */
     public String originalMethodName(String className,
                                      String obfuscatedMethodName,
-                                     String type) {
+                                     String type,
+                                     String arguments) {
         int extraIndent = -1;
         StringBuffer outLine = new StringBuffer();
 
@@ -145,7 +146,7 @@ public class DeObfuscator
                 Iterator methodInfoIterator = methodSet.iterator();
                 while (methodInfoIterator.hasNext()) {
                     MethodInfo methodInfo = (MethodInfo) methodInfoIterator.next();
-                    if (methodInfo.matches(0, type, null)) {
+                    if (methodInfo.matches(0, type, arguments)) {
                         // Is this the first matching method?
                         if (extraIndent < 0) {
                             extraIndent = outLine.length();
