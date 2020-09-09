@@ -6,7 +6,7 @@ DeObfuscator deObfuscator = new DeObfuscator(mappingFile);
 String originalClassName = deObfuscator.originalClassName(obfuscatedClassName);
 
 // 2) get original method name
-String originalMethodName = deObfuscator.originalMethodName(originalClassName)
+String originalMethodName = deObfuscator.originalMethodName(originalClassName, obfuscatedMethodName, type)
 ```
 
 ## Dependency
