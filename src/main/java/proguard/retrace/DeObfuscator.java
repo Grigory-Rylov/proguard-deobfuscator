@@ -176,7 +176,10 @@ public class DeObfuscator
                         }
                     } else if (methodSet.size() == 1) {
                         // fallback for R8
-                        outLine.append(methodInfo.originalName);
+                        if (extraIndent < 0) {
+                            extraIndent = outLine.length();
+                            outLine.append(methodInfo.originalName);
+                        }
                     }
                 }
             }
