@@ -174,6 +174,9 @@ public class DeObfuscator
                             extraOutLines.add(extraBuffer.toString());
                              */
                         }
+                    } else if (methodSet.size() == 1) {
+                        // fallback for R8
+                        outLine.append(methodInfo.originalName);
                     }
                 }
             }
